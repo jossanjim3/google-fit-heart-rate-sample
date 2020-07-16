@@ -263,9 +263,17 @@ class MainActivity : AppCompatActivity() {
         // Setting a start and end date using a range of 1 week before this moment.
         val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
         val now = Date()
+
+        // obtiene desde hoy hasta 1 semana atras
+//        calendar.time = now
+//        val endTime = calendar.timeInMillis
+//        calendar.add(Calendar.WEEK_OF_YEAR, -1)
+//        val startTime = calendar.timeInMillis
+
+        // obtener la frecuencia cardiaca de las ultimas X horas
         calendar.time = now
         val endTime = calendar.timeInMillis
-        calendar.add(Calendar.WEEK_OF_YEAR, -1)
+        calendar.add(Calendar.HOUR, -5)
         val startTime = calendar.timeInMillis
 
         Log.i(TAG, "Range Start: ${dateFormat.format(startTime)}")
